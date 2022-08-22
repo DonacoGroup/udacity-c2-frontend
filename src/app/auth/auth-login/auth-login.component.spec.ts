@@ -35,11 +35,15 @@ describe('AuthLoginPage', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthLoginComponent);
     component = fixture.componentInstance;
+    component.ngOnInit();
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    // console.log(component)
     expect(component).toBeTruthy();
+  });
+  // Testing form validity
+  it('form should be invalid when empty', () => {
+    expect(component.loginForm.valid).toBeFalsy();
   });
 });

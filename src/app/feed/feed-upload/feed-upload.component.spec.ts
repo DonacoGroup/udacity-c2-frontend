@@ -4,7 +4,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FeedUploadComponent } from './feed-upload.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {ModalController} from '@ionic/angular';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 describe('FeedUploadPage', () => {
   let component: FeedUploadComponent;
@@ -18,7 +18,7 @@ describe('FeedUploadPage', () => {
       return modalSpy;
     });
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule, ReactiveFormsModule ],
+      imports: [ HttpClientTestingModule, FormsModule, ReactiveFormsModule ],
       declarations: [ FeedUploadComponent ],
       providers: [
         {
@@ -34,10 +34,16 @@ describe('FeedUploadPage', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FeedUploadComponent);
     component = fixture.componentInstance;
+    component.ngOnInit();
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  // Testing form validity
+  it('form should be invalid when empty', () => {
+    expect(component.uploadForm.valid).toBeFalsy();
   });
 });

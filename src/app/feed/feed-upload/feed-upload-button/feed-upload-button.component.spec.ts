@@ -2,8 +2,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { FeedUploadButtonComponent } from './feed-upload-button.component';
-import {ModalController} from "@ionic/angular";
-import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {ModalController} from '@ionic/angular';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('FeedUploadButtonPage', () => {
   let component: FeedUploadButtonComponent;

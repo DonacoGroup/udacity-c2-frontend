@@ -18,7 +18,7 @@ describe('AuthRegisterPage', () => {
       return modalSpy;
     });
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, ReactiveFormsModule ],
+      imports: [HttpClientTestingModule, FormsModule, ReactiveFormsModule ],
       declarations: [ AuthRegisterComponent ],
       providers: [
         {
@@ -34,10 +34,16 @@ describe('AuthRegisterPage', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthRegisterComponent);
     component = fixture.componentInstance;
+    component.ngOnInit();
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  // Testing form validity
+  it('form should be invalid when empty', () => {
+    expect(component.registerForm.valid).toBeFalsy();
   });
 });
