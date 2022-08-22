@@ -12,6 +12,8 @@ import { MenubarComponent } from './menubar/menubar.component';
 
 import { AuthModule } from './auth/auth.module';
 import { ApiService } from './api/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import {ApiModule} from './api/api.module';
 
 @NgModule({
   declarations: [

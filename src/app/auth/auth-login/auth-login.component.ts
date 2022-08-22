@@ -11,6 +11,7 @@ import { catchError } from 'rxjs/operators';
   templateUrl: './auth-login.component.html',
   styleUrls: ['./auth-login.component.scss'],
 })
+
 export class AuthLoginComponent implements OnInit {
   loginForm: FormGroup;
   error: string;
